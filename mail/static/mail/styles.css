@@ -60,3 +60,6 @@ li{
 	cursor:pointer;
 }
 
+#title{
+	text-transform: capitalize;
+}
