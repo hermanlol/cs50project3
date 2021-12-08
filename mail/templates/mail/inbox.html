@@ -13,7 +13,15 @@
 
     <div id="emails-view">
     </div>
+    <div class="container" id="email-content">
+        <ul id="inbox-mails"></ul>
+    </div>
+    <div class="clear"></div>
+    <div class="container email-view-block" id="email"></div>
+    <div class="email-details-block" id="email-details"></div>
     
+
+
     <div id="compose-view">
         <h3>New Email</h3>
         <form id="compose-form">
@@ -33,5 +41,5 @@
 {% endblock %}
 
 {% block script %}
-    <script src="{% static 'mail/inbox.js' %}"></script>
+    <script src="{% static 'mail/inbox_debug1.js' %}"></script>
 {% endblock %}
