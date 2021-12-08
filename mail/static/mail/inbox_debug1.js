@@ -111,7 +111,7 @@ function archive_email(mailId,bool){
   window.location.reload();
 }
 
-
+//Viewing a specific email with mail ID
 function view_mail(mailId){
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#email-content').style.display = 'none';
@@ -119,7 +119,8 @@ function view_mail(mailId){
   document.querySelector('#email').style.display = 'block';
   document.querySelector('#email-details').style.display = 'block';
   const conMailId = mailId;
-  //Clearing
+  
+  //Clearing old contents
   document.querySelector('#email').innerHTML = '';
   document.querySelector('#email-details').innerHTML = '';
   //vs document.querySelector('#email').value = '';?
@@ -199,7 +200,7 @@ function load_mailbox(mailbox) {
   document.querySelector('#email').style.display = 'none';
   document.querySelector('#email-details').style.display = 'none';
 
-  // Show the mailbox name
+  // Show the mailbox name and clearing previous content
   document.querySelector('#title').innerHTML = mailbox;
   document.querySelector('#inbox-mails').innerHTML = '';
 
@@ -208,6 +209,8 @@ function load_mailbox(mailbox) {
   .then(emails => {
       // Print emails
       //document.querySelector('#email-content')
+
+      //Inbox email fetching and displaying emails
       if (mailbox === 'inbox'){
         //emails = emails.filter(email => )
         emails.forEach(function(email){
@@ -242,7 +245,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#inbox-mails').append(li);
         })
       }
-
+      //Sent email fetching and displaying.
       else if (mailbox === 'sent'){
         emails.forEach(function(email){
           console.log(email);
@@ -269,7 +272,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#inbox-mails').append(li);
         })
       }
-
+      //Archived email fetching and displaying
       else if (mailbox === 'archive'){
         emails.forEach(function(email){
           console.log(email);
@@ -297,13 +300,11 @@ function load_mailbox(mailbox) {
         })
       }
   
-      // ... do something else with emails ...
   });
-    // Print emails
-    
-    // ... do something else with emails ...
 
 }
+
+
 /*
 function send_email(){
   const recipients = document.querySelector('#compose-recipients').value;
