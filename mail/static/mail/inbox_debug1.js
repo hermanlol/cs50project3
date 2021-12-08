@@ -279,7 +279,7 @@ function load_mailbox(mailbox) {
 
           const div1 = document.createElement('div');
           div1.className = 'email-address-block';
-          div1.innerHTML = `${email.recipients}`;
+          div1.innerHTML = `${email.sender}`;
 
           const div3 = document.createElement('div');
           div3.className = 'email-subject-block';
